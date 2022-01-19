@@ -1,4 +1,7 @@
 from django.shortcuts import render, HttpResponse
+import requests
+
+
 
 # Create your views here.
 def index(request):
@@ -10,8 +13,6 @@ def index(request):
     # return HttpResponse("the the first page!")
 def header(request):
     return HttpResponse("header is here")
-def content(request):
-    return HttpResponse("para is here")
 def details(request):
     return HttpResponse("details about the user")
 def end(request):
