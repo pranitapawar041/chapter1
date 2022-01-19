@@ -37,6 +37,7 @@ def get_file(req: HttpRequest, filename):
         content = f.read()
         print(content)
         return HttpResponse(content)
+
 def delete_file(req:HttpRequest,filename):
     print(filename)
     if os.path.isfile(filename):
@@ -44,12 +45,11 @@ def delete_file(req:HttpRequest,filename):
     deleted =  HttpResponse("file deleted")
     return deleted
 
-  
 # Get the path of current working directory
-path = os.getcwd()
-def list_file(req:HttpRequest,filename):
-    dir_list = os.listdir(path) 
-    dir_list =HttpResponse("list of files")
+pathname = os.getcwd()
+def list_file(req:HttpRequest):
+    dir_list = os.listdir(pathname) 
+    dir_list =HttpResponse(dir_list)
     return dir_list
 
 urlpatterns = [
@@ -60,7 +60,7 @@ urlpatterns = [
     path("end", views.end, name = 'end'),
     path('data', put_file),
     path('uploads/data/<filename>', get_file),
-    path('data/<filename>',delete_file),
+    path('uploads/data/<filename>',delete_file),
     path('uploads',list_file)
 ]
 
