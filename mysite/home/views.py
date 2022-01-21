@@ -12,7 +12,15 @@ def index(request):
     return render (request,'index.html',context)
     # return HttpResponse("the the first page!")
 def header(request):
-    return HttpResponse("header is here")
+    wishes = {"first":"welcome Everyone"}
+    return render (request,'index.html',wishes)
+    #return HttpResponse("header is here")
+def content(request):
+    context = {
+        "var1": "heyyyyyyyyyyyyyyyyyyyy ",
+        "var2": "lets play cricket"
+    }
+    return render (request,'index.html',context)
 def details(request):
     return HttpResponse("details about the user")
 def end(request):
