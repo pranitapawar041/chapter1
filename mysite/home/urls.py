@@ -28,12 +28,12 @@ import urllib.request
 import random
 
 urlpatterns = [
-    path(" ", views.index, name = 'home'),
-    path("index",views.index, name = "index"),
-    path("header", views.header, name = 'header'),
-    path("content",views.content,name = 'content'),
-    path("details",views.details, name = 'details'),
-    path("end", views.end, name = 'end'),
+    path ("index",views.index,name= "index"),
+    path("vegan_icecream",views.vegan_icecream, name = "vegan_icecream"),
+    path("menu", views.menu, name = 'menu'),
+    path("about",views.about,name = 'about'),
+    path("services",views.services, name = 'services'),
+    path("contact",views.contact, name = 'contact')
 
 ]
 
