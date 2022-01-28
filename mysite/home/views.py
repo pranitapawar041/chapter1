@@ -16,13 +16,17 @@ def index(request):
    # return render (request,'index.html',wishes)
     #return HttpResponse("header is here")
 def vegan_icecream(request):
-    #return HttpResponse("welcome to our icecream parlour")
-    return render(request,'index.html')
+    return HttpResponse("welcome to our icecream parlour")
+    #return render(request,'index.html')
 def menu(request):
-    return HttpResponse("Here is what we serve")
+    return render (request,'menu.html')
+    #return HttpResponse("Here is what we serve")
 def about(request):
-    return HttpResponse("all about us")
+    return render (request,'about.html')
+    #return HttpResponse("all about us")
 def services (request):
-    return HttpResponse("You better taste below things")
+    return render (request,'services.html')
+    #return HttpResponse("You better taste below things")
 def contact (request):
-    return HttpResponse("reach out to us here!")
+    return render (request,'contact.html')
+    # return HttpResponse("reach out to us here!")
